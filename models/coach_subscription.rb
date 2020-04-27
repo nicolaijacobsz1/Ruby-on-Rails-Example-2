@@ -1,0 +1,2 @@
+class CoachSubscription < ApplicationRecord
+end
