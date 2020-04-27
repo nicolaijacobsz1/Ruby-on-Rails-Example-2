@@ -1,0 +1,30 @@
+# SQLite. Versions 3.8.0 and up are supported.
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+    adapter: postgresql
+    encoding: unicode
+    database: coaciety-dev
+    pool: 5
+    username: postgres
+    password: hK9IfhgZZBVhlh1nEqs3
+    host: mobius-pg.c6qmml27zf8r.ap-southeast-1.rds.amazonaws.com
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: coaciety-dev
+
+production:
+  <<: *default
+  database: coaciety-dev
